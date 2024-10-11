@@ -8,7 +8,7 @@ export class Customer {
         public readonly birthday: Date,
         public readonly nationality: string,
         public readonly createdAt: Date,
-        public readonly status: boolean
+        public readonly status?: boolean
     ) { }
 
     validateIdentification(): void {
@@ -17,24 +17,24 @@ export class Customer {
         }
     }
 
-    validateName(): void {
+    /* validateName(): void {
         if (this.name.length === 0) {
             throw new Error('The name is required and cannot be empty');
         }
-    }
+    } */
 
-    validateLastname(): void {
+    /* validateLastname(): void {
         if (this.lastname.length === 0) {
             throw new Error('The lastname is required and cannot be empty');
         }
-    }
+    } */
 
-    validateGender(): void {
+    /* validateGender(): void {
         const validGenders = ['Male', 'Female', 'Other'];
         if (!validGenders.includes(this.gender)) {
             throw new Error('The gender must be Male, Female or Other');
         }
-    }
+    } */
 
     validateBirthday(): void {
         const currentDate = new Date();
