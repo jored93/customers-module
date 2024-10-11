@@ -1,0 +1,17 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: jored93
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: customers-module
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+functions:
+  api:
+    handler: dist/server.handler
+    events:
+      - httpApi: "*"
+
+plugins:
+  - serverless-offline
